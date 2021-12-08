@@ -39,7 +39,11 @@ function App() {
     <div className="App">
       <Header />
       <Routes>
-        <Route exact path="/" element={<Customers />}></Route>
+        <Route
+          exact
+          path="/"
+          element={<Customers data={data.customers} />}
+        ></Route>
         <Route
           path="/customers"
           element={<Customers data={data.customers} />}
