@@ -23,7 +23,7 @@ function App() {
       }));
     };
     getCustomerData();
-  }, [data]);
+  }, []);
 
   useEffect(() => {
     const getContestData = async () => {
@@ -36,7 +36,7 @@ function App() {
       }));
     };
     getContestData();
-  }, [data]);
+  }, []);
   return (
     <div className="App">
       <Header />
