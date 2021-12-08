@@ -12,7 +12,9 @@ function App() {
     contests: null,
   });
   const getCustomerData = async () => {
-    const response = await fetch("http://localhost:3001/customers");
+    const response = await fetch(
+      "https://radpoker-backend.herokuapp.com/customers"
+    );
     const myData = await response.json();
     console.log(data);
     setData((prevState) => ({
@@ -24,7 +26,9 @@ function App() {
     getCustomerData();
   }, []);
   const getContestData = async () => {
-    const response = await fetch("http://localhost:3001/contests");
+    const response = await fetch(
+      "https://radpoker-backend.herokuapp.com/contests"
+    );
     const myData = await response.json();
     console.log(data);
     setData((prevState) => ({
