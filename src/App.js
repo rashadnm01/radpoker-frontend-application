@@ -1,5 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
+import Home from "./components/Home";
 import Customers from "./components/Index/Customers";
 import Contests from "./components/Index/Contests";
 import Customer from "./components/Show/Customer";
@@ -50,7 +51,7 @@ function App() {
       <Container>
         <Header />
         <Routes>
-          <Route exact path="/" element={<Customers data={data} />}></Route>
+          <Route exact path="/" element={<Home />}></Route>
           <Route path="/customers" element={<Customers data={data} />}></Route>
           <Route path="/contests" element={<Contests data={data} />}></Route>
           <Route path="/customers/:id" element={<Customer data={data} />} />
