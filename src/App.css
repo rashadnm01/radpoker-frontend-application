@@ -3,7 +3,7 @@ body {
   background-color: lightgray;
 }
 .App {
-  width: 60%;
+  width: 80%;
   margin: 0 auto;
 }
 .nav {
@@ -49,12 +49,36 @@ h1 {
   text-align: center;
   font-family: "Readex Pro", sans-serif;
 }
-.customerDisplay {
-  text-align: center;
+.customerDisplay,
+.contestDisplay {
+  text-align: left;
   margin: auto;
-  width: 30vw;
+  width: 100%;
   padding: 5px;
   margin-top: 20px;
   background-color: darkcyan;
   border-radius: 3em;
+  font-size: 30px;
+}
+
+.customerInfo {
+  margin: auto;
+}
+table,
+th,
+td,
+tr {
+  border: 1px solid black;
+  border-radius: 0.2em;
+  text-align: center;
+}
+.contestTable {
+  width: 60%;
+  margin: 30px auto;
+  font-size: 30px;
+  text-align: left;
+}
+.customerAccounts {
+  border-radius: 0.2em;
+  margin: 20px auto;
 }

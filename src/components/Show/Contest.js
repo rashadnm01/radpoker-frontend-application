@@ -2,14 +2,32 @@ import React from "react";
 import { useParams } from "react-router-dom";
 export default function Contest(props) {
   const params = useParams();
-  const id = params.id;
-  const contest = props.data.find((p) => p._id === id);
-  if (props.data) {
+  let counter = 0;
+  if (props.data.contests) {
+    const accounts = props.data.accounts;
+    accounts
+      .filter((account) => account.contest_id === props.data.contests.id)
+      .map((account) => {
+        counter += 1;
+      });
+    const id = params.id;
+    const contest = props.data.contests.find((p) => p._id === id);
     return (
       <div className="contestDisplay">
-        <h1>
-          {contest.name} : #{contest.id}
-        </h1>
+        <table className="contestTable">
+          <tr>
+            <th>Name</th>
+            <td>{contest.name}</td>
+          </tr>
+          <tr>
+            <th>ID</th>
+            <td>{contest.id}</td>
+          </tr>
+          <tr>
+            <th># of Accounts</th>
+            <td>{counter}</td>
+          </tr>
+        </table>
       </div>
     );
   } else {

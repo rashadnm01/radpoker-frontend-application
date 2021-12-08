@@ -1,11 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 export default function Customers(props) {
-  if (props.data) {
+  const params = useParams();
+  console.log(params);
+  if (props.data.customers) {
     return (
       <div className="customers">
         <h1>Customers</h1>
-        {props.data.map((customer) => {
+        {props.data.customers.map((customer) => {
           return (
             <Link to={`${customer._id}`}>
               <div key={customer._id} className="customer">
