@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 export default function Customer(props) {
   const params = useParams();
   const id = params.id;

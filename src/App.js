@@ -11,34 +11,32 @@ function App() {
     customers: null,
     contests: null,
   });
-  const getCustomerData = async () => {
-    const response = await fetch(
-      "https://radpoker-backend.herokuapp.com/customers"
-    );
-    const myData = await response.json();
-    console.log(data);
-    setData((prevState) => ({
-      ...prevState,
-      customers: myData,
-    }));
-  };
+
   useEffect(() => {
+    const getCustomerData = async () => {
+      const response = await fetch("http://localhost:3001/customers");
+      const myData = await response.json();
+      console.log(data);
+      setData((prevState) => ({
+        ...prevState,
+        customers: myData,
+      }));
+    };
     getCustomerData();
-  }, []);
-  const getContestData = async () => {
-    const response = await fetch(
-      "https://radpoker-backend.herokuapp.com/contests"
-    );
-    const myData = await response.json();
-    console.log(data);
-    setData((prevState) => ({
-      ...prevState,
-      contests: myData,
-    }));
-  };
+  }, [data]);
+
   useEffect(() => {
+    const getContestData = async () => {
+      const response = await fetch("http://localhost:3001/contests");
+      const myData = await response.json();
+      console.log(data);
+      setData((prevState) => ({
+        ...prevState,
+        contests: myData,
+      }));
+    };
     getContestData();
-  }, []);
+  }, [data]);
   return (
     <div className="App">
       <Header />

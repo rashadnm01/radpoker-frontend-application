@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 export default function Customers(props) {
   if (props.data) {
     return (
